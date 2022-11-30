@@ -97,3 +97,55 @@ char countryName[N_PLACE+1][MAX_PLACENAME] =
     "CapeTown",
     "Unrecognized"
 };
+
+//구조체 선언 
+typedef struct ifs_ele{
+	//번호
+	int snum;
+	//나이
+	int sage;
+	//감염시점
+	int spoint; 
+
+	//감염 직전 이동경로 enum 
+	enum sroute[N_HISTORY];	
+} ifs_ele_t;
+
+int function_{
+	ifs_ele_t ifs1;
+	};
+	
+static ifs_ele_t ifsarray[20];
+static int ifs_cnt;
+
+void* ifctele_genElement(int index, int age, unsigned int defected_time, int history_place[N_HISTORY])
+{
+	ifsarray[ifs_cnt].index = index;
+	ifsarray[ifs_cnt].index = index;
+	ifsarray[ifs_cnt].index = index;
+	ifsarray[ifs_cnt].index = index;
+	
+	ifs_cnt++;
+	
+	//return (void*)ifsarray[인덱스];
+	
+}
+
+
+int ifcele_getAge(void *obj)
+{
+	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
+	
+	return(); 
+}
+
+void ifsele_printElement()
+{
+	ifsele_t*strPtr = (ifs_ele_t *)obj;
+	
+	for(ifs_cnt=0;)
+	{
+		ifsarray[i].index -> print	
+	}
+		
+}
