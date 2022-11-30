@@ -52,6 +52,7 @@ int main(int argc, const char * argv[]) {
     	
 	}
 	*/
+	//ifsele_genElement();
     //1-3. FILE pointer close
     fclose(fp);
     
