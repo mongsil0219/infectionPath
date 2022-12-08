@@ -101,47 +101,49 @@ char countryName[N_PLACE+1][MAX_PLACENAME] =
 //구조체 선언 
 typedef struct ifs_ele{
 	//번호
-	int snum;
+	int index;
 	//나이
-	int sage;
+	int age;
 	//감염시점
-	int spoint; 
+	int time; 
 
 	//감염 직전 이동경로 enum 
-	enum sroute[N_HISTORY];	
+	place_t place[N_HISTORY];	
 } ifs_ele_t;
 
-int function_{
-	ifs_ele_t ifs1;
-	};
-	
-static ifs_ele_t ifsarray[20];
-static int ifs_cnt;
 
 void* ifctele_genElement(int index, int age, unsigned int defected_time, int history_place[N_HISTORY])
 {
-	ifsarray[ifs_cnt].index = index;
-	ifsarray[ifs_cnt].index = index;
-	ifsarray[ifs_cnt].index = index;
-	ifsarray[ifs_cnt].index = index;
+	ifs_ele_t *ptr;
 	
-	ifs_cnt++;
+	ptr = malloe();
+	ptr->index = index;
 	
-	//return (void*)ifsarray[인덱스];
+	ifsarray[ifs_cnt].index = index;
+	ifsarray[ifs_cnt].age = age;
+	ifsarray[ifs_cnt].defected_time = defected_time;
+	ifsarray[ifs_cnt].history_place = history_place;
+	
+	
+	return ptr;
 	
 }
 
+int ifctele_getHistPlaceIndex(void* obj, int index);
+unsigned int ifctele_getinfestedTime(void* obj);
 
-int ifcele_getAge(void *obj)
+
+
+char* ifctele_getPlaceName(int placeIndex)
 {
-	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
-	
-	return(); 
+	return countryName[placeIndex];
 }
 
-void ifsele_printElement()
+void ifsele_printElement( void *obj)
 {
 	ifsele_t*strPtr = (ifs_ele_t *)obj;
+	
+	printf("age : %i\n", str->age);
 	
 	for(ifs_cnt=0;)
 	{

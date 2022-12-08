@@ -50,11 +50,35 @@ int main(int argc, const char * argv[]) {
     	for(i=0; i<5;i++)
     		fscanf(5개 읽기) 
     	
+    	ifs_element  =  ifsclee genElement 
+    	ifsele_genElement(index, age, ,,,)
+    	
 	}
 	*/
 	//ifsele_genElement();
+	
+	 while ( 3 == fscanf("3가지 읽기", 변수들))
+    {
+    	for 
+			fscanf(5개 읽기) ;
+			
+		ifct_element = ifctele_genElement(index, age, ...);
+		
+		ifctdb_addTail(ifct_element);
+		
+	}
     //1-3. FILE pointer close
     fclose(fp);
+    
+    {
+    	int place1, place2;
+    	
+		place1 = 3;
+    	place2 = 15;
+    	
+    	printf("The first place is %s\n", ifctele_getPlaceName(place1)) ;
+    	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
+	}
     
     do {
         printf("\n=============== INFECTION PATH MANAGEMENT PROGRAM (No. of patients : %i) =============\n", ifctdb_len());
