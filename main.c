@@ -56,17 +56,16 @@ int main(int argc, const char * argv[]) {
 	}
 	*/
 	//ifsele_genElement();
-	
-	 while ( 3 == fscanf("3가지 읽기", 변수들))
-    {
-    	for 
-			fscanf(5개 읽기) ;
-			
-		ifct_element = ifctele_genElement(index, age, ...);
+	ifct_getelement(void){
+	while ( 3 == fscanf("%s , %i, %i", index, age, name))
+			int i;
+    		for (i=0;i<N_HISTORY;i++)
+				fscanf("%d", history_place[N_HISTORY]);
+				
+			ifct_element = ifctele_genElement(index, age, name, detected_time, history_place[N_HISTORY] );
 		
-		ifctdb_addTail(ifct_element);
-		
-	}
+			ifctdb_addTail(ifct_element);	
+	}	
     //1-3. FILE pointer close
     fclose(fp);
     
@@ -100,7 +99,8 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_PATIENT:
-                
+    
+                         
                 break;
                 
             case MENU_PLACE:

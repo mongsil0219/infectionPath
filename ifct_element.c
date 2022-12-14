@@ -116,17 +116,20 @@ void* ifctele_genElement(int index, int age, unsigned int defected_time, int his
 {
 	ifs_ele_t *ptr;
 	
-	ptr = malloe();
+	ptr = (ifs_ele_t *)malloc(100*sizeof(ifs_ele_t));
 	ptr->index = index;
+	
+	int ifsarray; 
+	
 	
 	ifsarray[ifs_cnt].index = index;
 	ifsarray[ifs_cnt].age = age;
 	ifsarray[ifs_cnt].defected_time = defected_time;
 	ifsarray[ifs_cnt].history_place = history_place;
 	
-	
+	//(void*)
 	return ptr;
-	
+
 }
 
 int ifctele_getHistPlaceIndex(void* obj, int index);
@@ -134,20 +137,26 @@ unsigned int ifctele_getinfestedTime(void* obj);
 
 
 
+
+void ifsele_printElement( void *obj)
+{
+	//ifsele_t 정의  
+	ifsele_t*strPtr = (ifs_ele_t *)obj;
+	
+	printf("number");
+	//str 정의 
+	printf("age : %i\n", str->age);
+	
+	int i;
+	for(i=0;i<30;i++)  // 최대숫자수정해야함   
+	{
+		ifsarray[i].index -> print;
+	}
+		
+}
+
 char* ifctele_getPlaceName(int placeIndex)
 {
 	return countryName[placeIndex];
 }
 
-void ifsele_printElement( void *obj)
-{
-	ifsele_t*strPtr = (ifs_ele_t *)obj;
-	
-	printf("age : %i\n", str->age);
-	
-	for(ifs_cnt=0;)
-	{
-		ifsarray[i].index -> print	
-	}
-		
-}
