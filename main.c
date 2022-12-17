@@ -55,17 +55,19 @@ int main(int argc, const char * argv[]) {
     	
 	}
 	*/
-	//ifsele_genElement();
-	ifct_getelement(void){
-	while ( 3 == fscanf("%s , %i, %i", index, age, name))
+	//ifsele_genElement
+	//ifct_getelement
+	{		
+	fp = fopen("patientinfo_sample.txt", "r");
+	while ( 3 == fscanf(fp,"%s , %i, %i", index, age, name))
 			int i;
     		for (i=0;i<N_HISTORY;i++)
 				fscanf("%d", history_place[N_HISTORY]);
 				
-			ifct_element = ifctele_genElement(index, age, name, detected_time, history_place[N_HISTORY] );
+			ifct_element = ifctele_genElement(index, age, name, defected_time, history_place[N_HISTORY] );
 		
 			ifctdb_addTail(ifct_element);	
-	}	
+	} 
     //1-3. FILE pointer close
     fclose(fp);
     
@@ -99,6 +101,14 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_PATIENT:
+            	printf("Patient index :\n");
+            	scanf("%d", &pIndex);
+            	
+            	ifct_element;
+            	printf("Patient index : %d\n", pIndex);
+            	printf("age : %i \n", ifctele_getAge(ifct_element) );
+            	printf("Detected time : %d\n",defected_time);
+            	printf("Path History : %d(%d)->%d(%d)->%d(%d)->%d(%d)->%d(%d)\n");
     
                          
                 break;

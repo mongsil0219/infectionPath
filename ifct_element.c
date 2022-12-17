@@ -98,38 +98,78 @@ char countryName[N_PLACE+1][MAX_PLACENAME] =
     "Unrecognized"
 };
 
-//구조체 선언 
-typedef struct ifs_ele{
-	//번호
-	int index;
-	//나이
-	int age;
-	//감염시점
-	int time; 
-
-	//감염 직전 이동경로 enum 
-	place_t place[N_HISTORY];	
-} ifs_ele_t;
-
-
-void* ifctele_genElement(int index, int age, unsigned int defected_time, int history_place[N_HISTORY])
+//구조체 선언 (정의 ) 
+typedef struct ifs_ele
 {
-	ifs_ele_t *ptr;
+	int index;  //번호 
+	int age;  //나이 
+	int time; //감염시점 
+	int place_t[N_HISTORY]; 
+	//enum place_t{place};	//감염 직전 이동경로 enum 
 	
-	ptr = (ifs_ele_t *)malloc(100*sizeof(ifs_ele_t));
+} ifs_ele_t; 
+
+//static ifs_ele_t ifsarray[20];
+static int ifs_cnt;
+
+
+void* ifsele_getAge(void*obj) 
+{
+	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
+
+	return strPtr;
+}
+
+
+
+void* ifctele_genElement(int index, int age, unsigned int defected_time, int history_place[N_HISTORY])  //구조체 내용 ( 생성) 저장  
+{
+	ifs_ele_t *ptr ;
+	
+	ptr = (void *)malloc(sizeof(ifs_ele_t));
 	ptr->index = index;
 	
-	int ifsarray; 
-	
-	
+	/*
 	ifsarray[ifs_cnt].index = index;
 	ifsarray[ifs_cnt].age = age;
-	ifsarray[ifs_cnt].defected_time = defected_time;
-	ifsarray[ifs_cnt].history_place = history_place;
+	ifsarray[ifs_cnt].time = defected_time;
+	ifsarray[ifs_cnt].place_t[N_HISTORY] = history_place[N_HISTORY];
 	
+	ifs_cnt ++ ; */
 	//(void*)
-	return ptr;
+	return (void*)ptr;
+}
 
+
+
+
+void ifsele_printElement(void *obj)
+{
+	//ifs_ele_t 정의  
+	ifs_ele_t*strPtr = (ifs_ele_t *)obj; //포인터로 구조체 가리키며 시작  
+	//strPtr = &ifs_ele_t;
+	
+	printf("Patient index : %d", strPtr->index);
+	printf("Patient age : %d",  strPtr->age);
+	printf("Detected time : %d",  strPtr->time);
+	printf("Path History : %d(%d)->%d(%d)->%d(%d)->%d(%d)->%d(%d)\n");
+	
+	free(strPtr);
+
+	/*strcpy(strPtr->age);
+	strcpy(strPtr->time);
+	strcpy(strPtr->place_t[N_HISTORY]);
+	//printf("number : %i\n", strPtr->index);
+	//str 정의 
+	//printf("age : %i\n",  strPtr->age);
+
+	*/
+	int i;
+	for(i=0;i<30;i++)  // 최대숫자수정해야함   
+	{
+		//ifsarray[i].index -> printf;
+	}
+		
 }
 
 int ifctele_getHistPlaceIndex(void* obj, int index);
@@ -137,26 +177,9 @@ unsigned int ifctele_getinfestedTime(void* obj);
 
 
 
-
-void ifsele_printElement( void *obj)
-{
-	//ifsele_t 정의  
-	ifsele_t*strPtr = (ifs_ele_t *)obj;
-	
-	printf("number");
-	//str 정의 
-	printf("age : %i\n", str->age);
-	
-	int i;
-	for(i=0;i<30;i++)  // 최대숫자수정해야함   
-	{
-		ifsarray[i].index -> print;
-	}
-		
-}
-
 char* ifctele_getPlaceName(int placeIndex)
 {
 	return countryName[placeIndex];
 }
+
 

@@ -19,3 +19,11 @@ unsigned int ifctele_getinfestedTime(void* obj);
 int ifctele_getAge(void* obj);
 void ifctele_printElement(void* obj);
 #endif /* ifct_element_h */
+
+/*int ifctele_getHistPlaceIndex(void* obj, int index);
+unsigned int ifctele_getinfestedTime(void* obj);
+int ifctele_getAge(void* obj);
+
+getAge 랑 비슷한 꼴로 짜야함
+ 
+*/
