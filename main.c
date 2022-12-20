@@ -57,8 +57,9 @@ int main(int argc, const char * argv[]) {
 	*/
 	//ifsele_genElement
 	//ifct_getelement
-	{		
-	fp = fopen("patientinfo_sample.txt", "r");
+	{
+		
+	FILE*fp = fopen("patientinfo_sample.txt", "r");
 	while ( 3 == fscanf(fp,"%s , %i, %i", index, age, name))
 			int i;
     		for (i=0;i<N_HISTORY;i++)
@@ -78,6 +79,9 @@ int main(int argc, const char * argv[]) {
     	place2 = 15;
     	
     	printf("The first place is %s\n", ifctele_getPlaceName(place1)) ;
+    	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
+    	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
+    	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
     	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
 	}
     
@@ -101,23 +105,39 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_PATIENT:
-            	printf("Patient index :\n");
-            	scanf("%d", &pIndex);
             	
-            	ifct_element;
-            	printf("Patient index : %d\n", pIndex);
-            	printf("age : %i \n", ifctele_getAge(ifct_element) );
-            	printf("Detected time : %d\n",defected_time);
-            	printf("Path History : %d(%d)->%d(%d)->%d(%d)->%d(%d)->%d(%d)\n");
-    
+            	ifsele_printElement()
+            
+				printf("Patient index :\n");
+    			scanf("%d", &pIndex);
+    			for(int i =0; i<; i++){
+    				if(intcmp(pIndex, )==0){
+    					 
+					}
+				}
+				void ifsele_printElement(void *obj)
+				
+            
                          
                 break;
                 
             case MENU_PLACE:
+            	ifctele_getHistPlaceIndex(void* obj, int index)
                 
                 break;
                 
             case MENU_AGE:
+            	ifsele_getAge() 
+            	int mn, mx;
+            	printf("minimal age :");
+				scanf("%d", &mn);
+				printf("maximal age :");
+				scanf("%d", &mx);
+				void* ifsele_getAge(void*obj){
+					
+					
+				}
+				 
                 
                 break;
                 
