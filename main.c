@@ -57,19 +57,21 @@ int main(int argc, const char * argv[]) {
 	*/
 	//ifsele_genElement
 	//ifct_getelement
-	{
-		
+			
 	FILE*fp = fopen("patientinfo_sample.txt", "r");
 	void* ifctele_genElement(int index, int age, unsigned int detected_time, int history_place[N_HISTORY]);
-	while ( 3 == fscanf(fp,"%i, %i, %i", &index, &age, &detected_time))
-			int i;
-    		for (i=0;i<N_HISTORY;i++)
-				fscanf("%s", &history_place[N_HISTORY]); 
-			ifct_element = ifs_elegenElement;
-			ifsele_genElement() = ifctele_genElement(int index, int age, unsigned int detected_time, int history_place[N_HISTORY]);
+	while (!feof(fp)){
+		fscanf(fp, "%d, %d, %d" &pIndex, &age, &time);	
+		int i;
+    	for (i=0;i<N_HISTORY;i++)
+			fscanf("%s", &placeHist[i]); 
+		//ifct_element = ifs_elegenElement;
+		//ifctele_genElement(int index, int age, unsigned int detected_time, int history_place[N_HISTORY]);
 		
-			ifctdb_addTail(ifct_element);	
-	} 
+		ifctdb_addTail();
+		ifctdb_len();                  
+		}
+	
     //1-3. FILE pointer close
     fclose(fp);
     
@@ -94,20 +96,24 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_PATIENT:
+            	void* ifctdb_getData(int index)
             	ifsele_printElement();       
                 break;
                 
             case MENU_PLACE:
-            	int ifctele_getHistPlaceIndex(void* obj, int index);
+            	
+            	ifctele_getHistPlaceIndex(void* obj, int index);
 
           	
                 break;
                 
             case MENU_AGE:
             	ifsele_getAge();
+            	printf(" ")
                 break;
                 
             case MENU_TRACK:
+            	
                     
                 break;
                 
@@ -117,6 +123,7 @@ int main(int argc, const char * argv[]) {
         }
     
     } while(menu_selection != 0);
+    
     
     
     return 0;

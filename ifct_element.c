@@ -110,7 +110,7 @@ typedef struct ifs_ele
 } ifs_ele_t; 
 
 //static ifs_ele_t ifsarray[20];
-static int ifs_cnt;
+//static int ifs_cnt;
 
 
 
@@ -154,16 +154,16 @@ void* ifsele_getAge(void*obj)
 		scanf("%d", &mx);
 		int i; 
 		for (i=0; i<strPtr->index; i++)
-			if(strPtr->age<=mx && strPtr->age>=mn)
-				ifsele_printElement(void *obj);
-					
-	return (struct strPtr*)strPtr->age;
+			if(strPtr->age<=mx && strPtr->age>=mn){
+				ifsele_printElement();
+			}
+	return ;
 }
 
 
 int ifctele_getHistPlaceIndex(void* obj, int index){
 	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
-	fscanf(fp, "%d", &)
+	fscanf(strPtr, "%d", &strPtr.place_t);
 	int i; 
 	for(i=0;i<N_HISTORY;i++){
 	}
@@ -196,14 +196,14 @@ char* ifctele_getPlaceName(int placeIndex)
 
 void ifsele_printElement(void *obj)
 {
-    scanf("%d", &pIndex);
+    scanf("%d", &patient_no);
 	//ifs_ele_t 정의  
 	ifs_ele_t*strPtr = (ifs_ele_t *)obj; //포인터로 구조체 가리키며 시작  
 	//strPtr = &ifs_ele_t;
 	int ptr=0;
 	for(ptr  = 0; ptr<strPtr.index ; ptr++)
 	{	
-		if(ptr == pIndex)	
+		if(ptr == patient_no)	
 			printf("Patient index : %d\n", strPtr->index );
 			printf("Patient age : %d\n", strPtr->age);
 			printf("Detected time : %d\n", strPtr->time);
