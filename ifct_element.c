@@ -147,15 +147,26 @@ void* ifctele_genElement(int index, int age, unsigned int detected_time, int his
 void* ifsele_getAge(void*obj) 
 {
 	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
-	
+	int mn, mx;
+        printf("minimal age :");
+		scanf("%d", &mn);
+		printf("maximal age :");
+		scanf("%d", &mx);
+		int i; 
+		for (i=0; i<strPtr->index; i++)
+			if(strPtr->age<=mx && strPtr->age>=mn)
+				ifsele_printElement(void *obj);
+					
 	return (struct strPtr*)strPtr->age;
 }
 
 
 int ifctele_getHistPlaceIndex(void* obj, int index){
 	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
+	fscanf(fp, "%d", &)
 	int i; 
-	for(i=0;i<N_HISTORY;i++)
+	for(i=0;i<N_HISTORY;i++){
+	}
 	
 		
 	

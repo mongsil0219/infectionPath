@@ -60,30 +60,19 @@ int main(int argc, const char * argv[]) {
 	{
 		
 	FILE*fp = fopen("patientinfo_sample.txt", "r");
-	while ( 3 == fscanf(fp,"%s , %i, %i", index, age, name))
+	void* ifctele_genElement(int index, int age, unsigned int detected_time, int history_place[N_HISTORY]);
+	while ( 3 == fscanf(fp,"%i, %i, %i", &index, &age, &detected_time))
 			int i;
     		for (i=0;i<N_HISTORY;i++)
-				fscanf("%d", history_place[N_HISTORY]);
-				
-			ifct_element = ifctele_genElement(index, age, name, defected_time, history_place[N_HISTORY] );
+				fscanf("%s", &history_place[N_HISTORY]); 
+			ifct_element = ifs_elegenElement;
+			ifsele_genElement() = ifctele_genElement(int index, int age, unsigned int detected_time, int history_place[N_HISTORY]);
 		
 			ifctdb_addTail(ifct_element);	
 	} 
     //1-3. FILE pointer close
     fclose(fp);
     
-    {
-    	int place1, place2;
-    	
-		place1 = 3;
-    	place2 = 15;
-    	
-    	printf("The first place is %s\n", ifctele_getPlaceName(place1)) ;
-    	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
-    	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
-    	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
-    	printf("The second place is %s\n", ifctele_getPlaceName(place2)) ;
-	}
     
     do {
         printf("\n=============== INFECTION PATH MANAGEMENT PROGRAM (No. of patients : %i) =============\n", ifctdb_len());
@@ -105,40 +94,17 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_PATIENT:
-            	
-            	ifsele_printElement()
-            
-				printf("Patient index :\n");
-    			scanf("%d", &pIndex);
-    			for(int i =0; i<; i++){
-    				if(intcmp(pIndex, )==0){
-    					 
-					}
-				}
-				void ifsele_printElement(void *obj)
-				
-            
-                         
+            	ifsele_printElement();       
                 break;
                 
             case MENU_PLACE:
-            	ifctele_getHistPlaceIndex(void* obj, int index)
-                
+            	int ifctele_getHistPlaceIndex(void* obj, int index);
+
+          	
                 break;
                 
             case MENU_AGE:
-            	ifsele_getAge() 
-            	int mn, mx;
-            	printf("minimal age :");
-				scanf("%d", &mn);
-				printf("maximal age :");
-				scanf("%d", &mx);
-				void* ifsele_getAge(void*obj){
-					
-					
-				}
-				 
-                
+            	ifsele_getAge();
                 break;
                 
             case MENU_TRACK:
