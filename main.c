@@ -63,15 +63,21 @@ int main(int argc, const char * argv[]) {
 	while (!feof(fp)){
 		fscanf(fp, "%d, %d, %d" &pIndex, &age, &time);	
 		int i;
-    	for (i=0;i<N_HISTORY;i++)
+    	for (i=0;i<N_HISTORY;i++){
 			fscanf("%s", &placeHist[i]); 
 		//ifct_element = ifs_elegenElement;
 		//ifctele_genElement(int index, int age, unsigned int detected_time, int history_place[N_HISTORY]);
-		
+			}
 		ifctdb_addTail();
 		ifctdb_len();                  
 		}
-	
+		
+		for(i=-; i< ; i++){
+			ifct_element= ifctdb_getData(i);
+			get
+		}
+
+
     //1-3. FILE pointer close
     fclose(fp);
     
@@ -96,12 +102,13 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_PATIENT:
-            	void* ifctdb_getData(int index)
+            	scanf("%d", patient_no);
+            	void* ifctdb_getData(patient_no);
             	ifsele_printElement();       
                 break;
                 
             case MENU_PLACE:
-            	
+
             	ifctele_getHistPlaceIndex(void* obj, int index);
 
           	
@@ -124,7 +131,7 @@ int main(int argc, const char * argv[]) {
     
     } while(menu_selection != 0);
     
-    
+    free(ptr);
     
     return 0;
 }

@@ -146,15 +146,15 @@ void* ifctele_genElement(int index, int age, unsigned int detected_time, int his
 
 void* ifsele_getAge(void*obj) 
 {
-	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
+	ifs_ele_t *ptr = (ifs_ele_t *)obj;
 	int mn, mx;
         printf("minimal age :");
 		scanf("%d", &mn);
 		printf("maximal age :");
 		scanf("%d", &mx);
 		int i; 
-		for (i=0; i<strPtr->index; i++)
-			if(strPtr->age<=mx && strPtr->age>=mn){
+		for (i=0; i<ptr->index; i++)
+			if(ptr->age<=mx && ptr->age>=mn){
 				ifsele_printElement();
 			}
 	return ;
@@ -162,69 +162,68 @@ void* ifsele_getAge(void*obj)
 
 
 int ifctele_getHistPlaceIndex(void* obj, int index){
-	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
-	fscanf(strPtr, "%d", &strPtr.place_t);
+	ifs_ele_t *ptr = (ifs_ele_t *)obj;
 	int i; 
 	for(i=0;i<N_HISTORY;i++){
 	}
 	
-		
 	
-	return (struct strPtr*)strPtr->place_t;
+	return ptr->place_t;
 	
 }
 
 unsigned int ifctele_getinfestedTime(void* obj){   
-	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
+	ifs_ele_t *ptr = (ifs_ele_t *)obj;
 
-	return (struct strPtr*)strPtr->time;
+	return ptr->time;
 	
 }
 
 char* ifctele_getPlaceName(int placeIndex)
 {
-	ifs_ele_t *strPtr = (ifs_ele_t *)obj;
-	if (place_t == placeIndex)
-	int i;
-	for(i=0;i<N_HISTORY;i++){
-		return countryName[place_t[i]]; 
+	void ifctele_getHistPlaceIndex(void* obj, int index)
+	if (place_t == placeIndex){
+		countryName[placeIndex]=place_t[index];
+		}
+	}else{
+		printf("No place");
 	}
-}
+	
+};
 
 
 
 
-void ifsele_printElement(void *obj)
-{
+void ifsele_printElement(void *obj){
     scanf("%d", &patient_no);
 	//ifs_ele_t 정의  
-	ifs_ele_t*strPtr = (ifs_ele_t *)obj; //포인터로 구조체 가리키며 시작  
-	//strPtr = &ifs_ele_t;
+	ifs_ele_t*ptr = (ifs_ele_t *)obj; //포인터로 구조체 가리키며 시작  
+	//ptr = &ifs_ele_t;
 	int ptr=0;
-	for(ptr  = 0; ptr<strPtr.index ; ptr++)
+	for(ptr  = 0; ptr<ptr.index ; ptr++)
 	{	
-		if(ptr == patient_no)	
-			printf("Patient index : %d\n", strPtr->index );
-			printf("Patient age : %d\n", strPtr->age);
-			printf("Detected time : %d\n", strPtr->time);
+		if(ptr == patient_no){	
+			printf("Patient index : %d\n", ptr->index );
+			printf("Patient age : %d\n", ptr->age);
+			printf("Detected time : %d\n", ptr->time);
 			int i;
 			printf("Path History :");
 			for(i=0; i<5; i++)
-				printf(" %c(%d)->", ifs_ele_t.place_t[ptr][i]);			
+				printf(" %c(%d)->", ifs_ele_t.place_t[ptr][i]);
+			}
 		else
 			printf("No Patient");
 			
 	}
-}
+};
 
-	free(strPtr);
 
-	/*strcpy(strPtr->age);
-	strcpy(strPtr->time);
-	strcpy(strPtr->place_t[N_HISTORY]);
-	//printf("number : %i\n", strPtr->index);
+	/*strcpy(ptr->age);
+	strcpy(ptr->time);
+	strcpy(ptr->place_t[N_HISTORY]);
+	//printf("number : %i\n", ptr->index);
 	//str 정의 
-	//printf("age : %i\n",  strPtr->age);
+	//printf("age : %i\n",  ptr->age);
 
 	
 	int i;
